@@ -1,24 +1,40 @@
-# README
+# Chat-Space DB設計図
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|username|string|null: false|
+## Association
+- has_many :gropes
+- has_many :commnts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreing_key: true|
+|phote|img|null: false
+## Association
+- belongs_to :user
+- has_many :gropes_comments
+- has_many :gropes, through: :gropes_comments
 
-Things you may want to cover:
+## gropeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|gropename|string|null: false|
+|chatmember|string|null: false|
+## Association
+- belongs_to :user
+- has_many :gropes_comments
+- has_many :comments, through: :gropes_comments
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## grope_commentsテーブル
+|Clumn|Type|Options|
+|-----|----|-------|
+|grope_id|integer|null: false, foreign_key: ture|
+|comments_id|integer|null: false, foreign_key: ture|
+## Association
+- belongs_to :grope
+- belongs_to :user
