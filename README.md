@@ -9,14 +9,14 @@
 - has_many :groups
 - has_many :comments
 - has_many :users_groups
-- has_many :gropes, through: :users_groups
+- has_many :groups, through: :users_groups
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 |user_id|integer|null: false, foreing_key: true|
-|phote|img|null: false|
+|image|string|null: false|
 ## Association
 - belongs_to :group
 - belongs_to :user
@@ -25,9 +25,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|chatmember|string|null: false|
 ## Association
-- has_many :user
 - has_many :users_groups
 - belongs_to :comment
 - has_many :users, through: :users_groups
