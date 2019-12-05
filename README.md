@@ -8,17 +8,18 @@
 ## Association
 - has_many :gropes
 - has_many :commnts
+- has_many :users_gropes
+- has_many :gropes, through: :usera_groups
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 |user_id|integer|null: false, foreing_key: true|
-|phote|img|null: false
+|phote|img|null: false|
 ## Association
+- belongs_to :grope
 - belongs_to :user
-- has_many :gropes_comments
-- has_many :gropes, through: :gropes_comments
 
 ## gropeテーブル
 |Column|Type|Options|
@@ -26,15 +27,16 @@
 |gropename|string|null: false|
 |chatmember|string|null: false|
 ## Association
-- belongs_to :user
-- has_many :gropes_comments
-- has_many :comments, through: :gropes_comments
+- has_many :user
+- has_many :users_gropes
+- belongs_to :comment
+- has_many :users, through: :users_gropes
 
-## grope_commentsテーブル
+## users_gropesテーブル
 |Clumn|Type|Options|
 |-----|----|-------|
 |grope_id|integer|null: false, foreign_key: ture|
-|comments_id|integer|null: false, foreign_key: ture|
+|user_id|integer|null: false, foreign_key: ture|
 ## Association
 - belongs_to :grope
 - belongs_to :user
