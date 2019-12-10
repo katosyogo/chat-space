@@ -14,7 +14,6 @@
     align-items: center;
   
     &__waku {
-      // background-color: white;
       width:80vw;
       height:20px;
       margin: 0px 20px;
@@ -24,10 +23,10 @@
         color: #ffffff;
       }
       &__icon {
-        width: 60px;
+        // width: 60px;
         display: flex;
         align-items: center;
-        text-align: right;
+        // text-align: right;
         &__icon-type-edit {
           margin: auto;
         }
@@ -43,25 +42,21 @@
   }
   
   &__group-list {
-    background-color: #2f3e51;
-    height: calc(100vh - 100px);
-    width: 300px;
+    // background-color: #2f3e51;
+    // height: calc(100vh - 100px);
+    // width: 300px;
     &__list {
-      // background-color: #ffffff;
-      width: 260px;
+      // width: 260px;
       margin: 0px 20px;
       &__waku {
-        // background-color: red;
         padding: 20px 0px 40px;
         &__group {
-          // background-color: aquamarine;
           color: #ffffff;
           font-size: 15px;
           line-height: 15px;
           margin-bottom: 5px;
         }
         &__message {
-          // background-color: bisque;
           color: #ffffff;
           font-size: 11px;
           line-height: 11px;
@@ -81,9 +76,7 @@
     display: flex;
     justify-content: space-between;
     &__left {
-      // background-color: red;
       padding: 35px 0px 0px 40px;
-      // width: 50%;
       &__group-name {
         color: #333333;
         font-size: 20px;
@@ -94,16 +87,6 @@
         font-size: 12px;
       }
     }
-    // &__right {
-    //   color: #38aef0;
-    //   height: 40px;
-    //   line-height: 40px;
-    //   margin-top: 28px; 
-    //   margin-right: 40px;
-    //   padding: 0 20px;
-    //   border-color: #38aef0;
-    //   border: solid 1px;
-    // }
     a {
       color: #38aef0;
       height: 40px;
@@ -154,45 +137,31 @@
     align-items: center;
     padding: 10px 40px;
     &__waku {
-      height: 50px;
+      // height: 50px;
       width: 100%;
-      background-color: #d2d2d2;
+      // background-color: #d2d2d2;
       display: flex;
-      justify-content: space-between;
-      // justify-content: center;  
+      // justify-content: space-between;
       &__message {
         background-color: white;
-        height: 50px;
+        // height: 50px;
         width: 100%;
         line-height: 50px;
         padding: 0 10px;
         position: relative;
-        // display: flex;
-        // justify-content: space-between;
         &__icon {
           position: absolute;
-          top: 0;
+          // top: 0;
           right: 10px;
           font-size: 1.3rem;
           cursor: pointer;
           input {
             display: none;
           }
-          // line-height: 50px;/
-          // a {
-          //   font-size: 1.3rem;
-          //   color: black;
-          // }
         }
-          // a {
-          //   font-size: 1.3rem;
-          //   color: black;
-          // }
       }
       &__send {
         background-color:#38aef0;
-        // height: 50px;
-        // width:100px;
         margin-left: 15px;
         padding: 0 30px;
         color: white;
