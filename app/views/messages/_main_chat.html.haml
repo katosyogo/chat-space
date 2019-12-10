@@ -1,0 +1,36 @@
+.main_chat
+  .main_chat__header
+    .main_chat__header__left
+      .main_chat__header__left__group-name
+        group_a
+      .main_chat__header_left__member-name
+        kato
+    .a
+    = link_to "#" do
+      Edit
+  .main_chat__contents
+    .main_chat__contents__content
+      .main_chat__contents__content__list
+        .main_chat__contents__content__list__name
+          group_a
+        .main_chat__contents__content__list__date
+          2019/12/09(Mon) 17:20:00
+      .main_chat__contents__content__message
+        こんちわ
+    .main_chat__contents__content
+      .main_chat__contents__content__list
+        .main_chat__contents__content__list__name
+          group_b
+        .main_chat__contents__content__list__date
+          2019/12/09(Mon) 17:20:00
+      .main_chat__contents__content__message
+        こんちわ
+  .main_chat__footer
+    .main_chat__footer__waku
+      .main_chat__footer__waku__message
+        message
+        %label.main_chat__footer__waku__message__icon
+          = icon('fas','image')
+          %input{type: "file"}
+      .main_chat__footer__waku__send
+        Send
