@@ -1,15 +1,15 @@
 .side_bar
   .side_bar__header
     .side_bar__header__waku
-      .side_bar__header__waku__name
-        name
+      %h3.side_bar__header__waku__name
+        = current_user.name
       .side_bar__header__waku__icon
         .side_bar__header__waku__icon__icon-type-edit
         = link_to "#" do
           = icon('fas','edit')
         .side_bar__header__waku__icon__icon-type-cog
-        = link_to "#" do
-          = icon('fas','cog')
+        = link_to edit_user_path(current_user) do
+          = icon('fas','cog', class: 'icon')
   .side_bar__group-list
     .side_bar__group-list__list
       .side_bar__group-list__list__waku
