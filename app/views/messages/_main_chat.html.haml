@@ -26,11 +26,22 @@
       .main_chat__contents__content__message
         こんちわ
   .main_chat__footer
-    .main_chat__footer__waku
-      .main_chat__footer__waku__message
-        message
-        %label.main_chat__footer__waku__message__icon
-          = icon('fas','image')
-          %input{type: "file"}
-      .main_chat__footer__waku__send
-        Send
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+    
+    -# .main_chat__footer__waku
+    -#   .main_chat__footer__waku__message
+    -#      = form_for [@group, @message] do |f|
+    -#       = f.text_field :content, class: 'waku__message', placeholder: 'type a message'
+    -#     .main_chat__footer__waku__message__icon
+    -#     = f.label :image, class: 'message__icon' do
+    -#       = icon('fas','image' class: 'message__icon')
+    -#       = f.file_field :image, class: 'message__icon'
+    -#   .main_chat__footer__waku__send
+    -#     = f.submit 'Send', class: 'form__submit'
