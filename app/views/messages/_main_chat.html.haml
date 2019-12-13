@@ -10,21 +10,8 @@
       Edit
   .main_chat__contents
     .main_chat__contents__content
-      .main_chat__contents__content__list
-        .main_chat__contents__content__list__name
-          group_a
-        .main_chat__contents__content__list__date
-          2019/12/09(Mon) 17:20:00
-      .main_chat__contents__content__message
-        こんちわ
-    .main_chat__contents__content
-      .main_chat__contents__content__list
-        .main_chat__contents__content__list__name
-          group_b
-        .main_chat__contents__content__list__date
-          2019/12/09(Mon) 17:20:00
-      .main_chat__contents__content__message
-        こんちわ
+      = render @messages
+
   .main_chat__footer
     .form
       = form_for [@group, @message] do |f|
@@ -34,14 +21,3 @@
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
-    
-    -# .main_chat__footer__waku
-    -#   .main_chat__footer__waku__message
-    -#      = form_for [@group, @message] do |f|
-    -#       = f.text_field :content, class: 'waku__message', placeholder: 'type a message'
-    -#     .main_chat__footer__waku__message__icon
-    -#     = f.label :image, class: 'message__icon' do
-    -#       = icon('fas','image' class: 'message__icon')
-    -#       = f.file_field :image, class: 'message__icon'
-    -#   .main_chat__footer__waku__send
-    -#     = f.submit 'Send', class: 'form__submit'
