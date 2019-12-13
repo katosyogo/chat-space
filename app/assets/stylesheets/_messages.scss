@@ -42,6 +42,7 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     width: 300px;
+    overflow: scroll;
     &__list {
       margin: 0px 20px;
       &__waku {
@@ -103,6 +104,7 @@
     border-top-style: solid;
     border-width: 1px;
     border-top-color: #eeeeee;
+    overflow: scroll;
     &__content {
       margin-top: 35px;
       margin-left: 40px;
