@@ -1,4 +1,5 @@
 $(function(){
+  
   function buildHTML(message){
     if ( message.image ) {
       var html = 
@@ -45,8 +46,8 @@ $(function(){
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
-      url: url,  //同期通信でいう『パス』
-      type: 'POST',  //同期通信でいう『HTTPメソッド』
+      url: url,  
+      type: 'POST',  
       data: formData,  
       dataType: 'json',
       processData: false,
@@ -59,9 +60,32 @@ $(function(){
       $('form')[0].reset();
       $('.form__submit').prop('disabled', false);
     })
-    .fail(function(){
-      alert('error');
+    .fail(function () {
+      alert("エラー");
     });
-    return false;
   });
+
+    var reloadMessages = function () {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        var last_message_id = $('.main_chat__contents__content:last').data("message-id");
+        $.ajax({ 
+          url: "api/messages", 
+          type: 'get',
+          dataType: 'json',
+          data: {id: last_message_id} 
+        })
+        .done(function (messages) { 
+          var insertHTML = '';
+          messages.forEach(function (message) {
+            insertHTML = buildHTML(message);
+            $('.main_chat__contents').append(insertHTML);
+          })
+          $('.main_chat__contents').animate({scrollTop: $('.main_chat__contents')[0].scrollHeight}, 'fast');
+        })
+        .fail(function () {
+          alert('自動更新に失敗しました');
+        });
+      }
+    };
+  setInterval(reloadMessages, 7000);
 });
