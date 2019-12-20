@@ -47,6 +47,7 @@
       margin: 0px 20px;
       &__waku {
         padding: 20px 0px 40px;
+        text-decoration: none;
         &__group {
           color: #ffffff;
           font-size: 15px;
@@ -127,7 +128,7 @@
           padding-bottom: 40px;
           word-wrap: break-word;
           .lower-message__content {
-            margin-bottom: 10px;      //ここじゃなくてもいい
+            margin-bottom: 10px;
           }
         }
       }

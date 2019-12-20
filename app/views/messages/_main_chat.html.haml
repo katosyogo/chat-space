@@ -3,7 +3,7 @@
     .main_chat__header__left
       .main_chat__header__left__group-name
         = @group.name
-      .main_chat__header_left__member-name
+      .main_chat__header__left__member-name
         - @group.users.each do |user|
           = user.name
     .a
