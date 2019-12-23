@@ -141,6 +141,7 @@
       height: 90px;
       padding: 20px 40px;
       &__message {
+        display: flex;
         border-style: none;
         float: left;
         height: 50px;
@@ -165,7 +166,7 @@
       }
       
       &__submit {
-        background-color: blue;
+        background-color: #38aef0;
         border: none;
         color: white;
         float: right;
