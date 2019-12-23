@@ -140,8 +140,10 @@
       box-sizing: border-box;
       height: 90px;
       padding: 20px 40px;
-      &__message {
+      .new_message{
         display: flex;
+      }
+      &__message {
         border-style: none;
         float: left;
         height: 50px;
