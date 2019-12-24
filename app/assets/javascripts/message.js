@@ -81,7 +81,9 @@ $(function(){
             insertHTML = buildHTML(message);
             $('.main_chat__contents').append(insertHTML);
           })
-          $('.main_chat__contents').animate({scrollTop: $('.main_chat__contents')[0].scrollHeight}, 'fast');
+          if ( insertHTML ) {
+            $('.main_chat__contents').animate({scrollTop: $('.main_chat__contents')[0].scrollHeight}, 'fast');
+          }
         })
         .fail(function () {
           alert('自動更新に失敗しました');
